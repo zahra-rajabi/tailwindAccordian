@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="build/output.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-violet-300 to-purple-950 flex h-screen justify-center items-center"
+  >
+    <div class="max-w-lg w-full bg-white p-6 rounded-lg space-y-4">
+      <div x-data="{tabOne :false}">
+        <div
+          class="bg-purple-300 flex justify-between items-center rounded-lg px-4 py-2"
+          @click="tabOne = !tabOne"
+          :class="tabOne? 'bg-purple-600 text-white':''"
+        >
+          <span>What is your refund policy?</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x-show="!tabOne"
+            class="h-6 w-6 stroke-purple-950"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+          <svg
+            x-show="tabOne"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 stroke-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M5 15l7-7 7 7"
+            />
+          </svg>
+        </div>
+        <p class="px-4 mt-2" x-show="tabOne">
+          If you're unhappy with your purchase for any reason, email us within
+          90 days and we'll refund you in full, no questions asked.
+        </p>
+      </div>
+      <div x-data="{tabTwo : false}">
+        <div
+          @click="tabTwo = !tabTwo"
+          class="bg-purple-300 flex justify-between items-center rounded-lg px-4 py-2 cursor-pointer"
+          :class="tabTwo? 'bg-purple-600 text-white':''"
+        >
+          <span> Do you offer technical support?</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 stroke-purple-950"
+            fill="none"
+            x-show="!tabTwo"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 stroke-white"
+            x-show="tabTwo"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M5 15l7-7 7 7"
+            />
+          </svg>
+        </div>
+        <p class="px-4 mt-2" x-show="tabTwo">No.</p>
+      </div>
+    </div>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>
